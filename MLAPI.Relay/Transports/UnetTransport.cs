@@ -36,6 +36,8 @@ namespace MLAPI.Relay.Transports
                 return new IPEndPoint(IPAddress.Parse(address).MapToIPv6(), port);
             }
 
+            Console.WriteLine (string.Format ("[ERROR] Unable to get connection information: hostId ({0}) connectionId ({1}) address ({2}) port ({3}) error ({4})", hostId, connectionId, address, port, ((NetworkError) error).ToString ()));
+
             return null;
         }
 
